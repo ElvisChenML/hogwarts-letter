@@ -1,6 +1,7 @@
-<p align="center" style="background-color: #f5f5f5; padding: 10px; border-radius: 8px;">
-  <img src="./assets/hogwarts-crest.png" alt="Hogwarts Crest" />
+<p align="center">
+  <img src="./preview/hogwarts-crest-white-bg.png" alt="Hogwarts Crest" />
 </p>
+
 [![Github stars](https://img.shields.io/github/stars/ElvisChenML/hogwarts-letter?color=cd7373&logo=github&style=flat-square)](https://github.com/ElvisChenML/hogwarts-letter/stargazers) ![github top language](https://img.shields.io/github/languages/top/ElvisChenML/hogwarts-letter?logo=github) [![License](https://img.shields.io/github/license/ElvisChenML/hogwarts-letter?&color=cd7373&style=flat-square)](./LICENSE)
 
 # 🎬 霍格沃茨入学通知书（网页版）
