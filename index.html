@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SVG Envelope Icon Pure CSS Animation</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- 触发锚点，隐藏元素 -->
+<a id="open" style="display:none"></a>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+<svg id="envelope" width="1200" height="800" enable-background="new" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  
+ <defs>
+    <pattern id="env-pattern" patternUnits="objectBoundingBox" width="1" height="1">
+      <image xlink:href="assets/envelope.jpg" width="100%" height="100%" preserveAspectRatio="none"/>
+    </pattern>
+  </defs>
+  
+ <rect x="2.565" y="36.73" width="94.94" height="60.77" fill="url(#env-pattern)" style="paint-order:stroke markers fill"/>
+ <path class="env-flap-open" d="m97.43 36.73h-94.87l47.43-34.8 47.43 34.8" fill="url(#env-pattern)" stroke="#5d4736" stroke-linejoin="round" stroke-width="0.3" style="paint-order:stroke markers fill"/>
+ <rect class="env-paper" x="16.88" y="-52" width="66.24" height="47.25" stroke="#fff" fill="teal"/>
+ <g fill="url(#env-pattern)" stroke="#5d4736" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3">
+  <path d="m52.31 66.47 45.12 30.99v-60.73l-45.12 29.74" style="paint-order:stroke markers fill"/>
+  <g>
+   <path d="m47.69 66.47-45.12 30.99v-60.73l45.12 29.74" style="paint-order:stroke markers fill"/>
+   <path d="m97.51 97.5h-95.02l47.51-42.51 47.51 42.51" style="paint-order:stroke markers fill"/>
+  </g>
+ </g>
+  <path class="env-flap-closed" d="m97.45 36.73h-94.93l47.47 34.95 47.47-34.95" fill="url(#env-pattern)" stroke="#5d4736" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" style="paint-order:stroke markers fill"/>
+  <g transform="rotate(15, 50.5, 72.5)">
+    <image class="wax-seal" xlink:href="assets/wax-seal.png" x="43" y="65" width="15" height="15"
+      style="filter: grayscale(20%);" />
+  </g>
+  <image class="crest" xlink:href="assets/hogwarts-crest.png" x="40" y="44" width="20" height="20" style="opacity:0.6"/>
+  <a href="#open" style="cursor:pointer">
+    <rect x="43" y="65" width="15" height="15" fill="transparent"/>
+  </a>
+  </div>
+<!-- partial -->
+  
+</body>
+</html>
