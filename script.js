@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const openLink = document.querySelector('a[href="#open"]');
     
     // 页面刷新时清除可能残留的 #open 锚点，以保持初始关闭状态
-    // if (window.location.hash) {
-    //     history.replaceState(null, '', window.location.pathname + window.location.search);
-    // }
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
 
     // 交互触发元素：漂浮羽毛
     const feather = document.getElementById('feather');
