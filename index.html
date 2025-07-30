@@ -1,45 +1,164 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>SVG Envelope Icon Pure CSS Animation</title>
+  <title>Hogwarts Acceptance Letter</title>
   <link rel="stylesheet" href="./style.css">
-
 </head>
+
 <body>
-<!-- 触发锚点，隐藏元素 -->
-<a id="open" style="display:none"></a>
-<!-- partial:index.partial.html -->
-<div class="wrapper">
-<svg id="envelope" width="1200" height="800" enable-background="new" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  
- <defs>
-    <pattern id="env-pattern" patternUnits="objectBoundingBox" width="1" height="1">
-      <image xlink:href="assets/envelope.jpg" width="100%" height="100%" preserveAspectRatio="none"/>
-    </pattern>
-  </defs>
-  
- <rect x="2.565" y="36.73" width="94.94" height="60.77" fill="url(#env-pattern)" style="paint-order:stroke markers fill"/>
- <path class="env-flap-open" d="m97.43 36.73h-94.87l47.43-34.8 47.43 34.8" fill="url(#env-pattern)" stroke="#5d4736" stroke-linejoin="round" stroke-width="0.3" style="paint-order:stroke markers fill"/>
- <rect class="env-paper" x="16.88" y="-52" width="66.24" height="47.25" stroke="#fff" fill="teal"/>
- <g fill="url(#env-pattern)" stroke="#5d4736" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3">
-  <path d="m52.31 66.47 45.12 30.99v-60.73l-45.12 29.74" style="paint-order:stroke markers fill"/>
-  <g>
-   <path d="m47.69 66.47-45.12 30.99v-60.73l45.12 29.74" style="paint-order:stroke markers fill"/>
-   <path d="m97.51 97.5h-95.02l47.51-42.51 47.51 42.51" style="paint-order:stroke markers fill"/>
-  </g>
- </g>
-  <path class="env-flap-closed" d="m97.45 36.73h-94.93l47.47 34.95 47.47-34.95" fill="url(#env-pattern)" stroke="#5d4736" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3" style="paint-order:stroke markers fill"/>
-  <g transform="rotate(15, 50.5, 72.5)">
-    <image class="wax-seal" xlink:href="assets/wax-seal.png" x="43" y="65" width="15" height="15"
-      style="filter: grayscale(20%);" />
-  </g>
-  <image class="crest" xlink:href="assets/hogwarts-crest.png" x="40" y="44" width="20" height="20" style="opacity:0.6"/>
-  <a href="#open" style="cursor:pointer">
-    <rect x="43" y="65" width="15" height="15" fill="transparent"/>
-  </a>
+  <a id="open" style="display:none"></a>
+  <!-- 漂浮羽毛，作为用户交互入口 -->
+  <img id="feather" src="assets/feather.png" class="feather" alt="Floating Feather"/>
+
+  <div class="wrapper">
+    <div id="owl-container" class="hidden"></div>
+    <div class="letter-container">
+      <div class="letter">
+        <!-- Page 1: Acceptance Letter -->
+        <div class="page" id="page-1">
+          <div class="letter-content">
+            <img src="assets/hogwarts-crest.png" alt="Hogwarts Crest" class="letter-crest">
+
+            <div class="recipient-address">
+              <p>Mr Harry Potter.</p>
+              <p>The Cupboard Under the Stairs.</p>
+              <p>4 Privet Drive.</p>
+              <p>Little Whinging.</p>
+              <p>Surrey.</p>
+            </div>
+
+            <div class="letter-body">
+              <p class="salutation">Dear Mr Potter,</p>
+              <p class="indented-paragraph">We are pleased to inform you that you have been accepted at Hogwarts School
+                of Witchcraft and Wizardry.</p>
+              <p class="indented-paragraph">Students shall be required to report to the Chamber of Reception upon
+                arrival, the dates for which shall be duly advised.</p>
+              <p class="indented-paragraph">Please ensure that the utmost attention be made to the list of requirements
+                attached herewith.</p>
+              <p class="indented-paragraph">We very much look forward to receiving you as part of the new generation of
+                Hogwarts heritage.</p>
+              <p class="closing">Yours Sincerely,</p>
+            </div>
+
+            <p class="signature">M. McGonagall</p>
+            <p class="signature-title">Professor McGonagall</p>
+
+            <div class="letter-footer">
+              <p>HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY</p>
+              <p class="headmaster-line">Headmaster: ALBUS DUMBLEDORE</p>
+              <p class="headmaster-titles">(Order of Merlin, First Class, Grand Sorc., Chf. Warlock,<br>Supreme Mugwump,
+                International Confed. of Wizards)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page 2: Requirements List -->
+        <div class="page" id="page-2">
+          <div class="letter-content">
+            <img src="assets/hogwarts-crest.png" alt="Hogwarts Crest" class="letter-crest">
+
+            <div class="list-section">
+              <h2>UNIFORM</h2>
+              <p>First-year students will require:</p>
+              <ul class="requirements-list">
+                <li>Three Sets of Plain Work Robes (Black)</li>
+                <li>One Plain Pointed Hat (Black) for day wear</li>
+                <li>One Pair of Protective Gloves (dragon hide or similar)</li>
+                <li>One Winter Cloak (Black, silver fastenings)</li>
+              </ul>
+              <p class="list-note">Please note that all pupil's clothes should carry name-tags</p>
+            </div>
+
+            <div class="list-section">
+              <h2>BOOKS</h2>
+              <p>All students should have a copy of each of the following:</p>
+              <ul class="requirements-list">
+                <li>The Standard Book of Spells (Grade 1) by Miranda Goshawk</li>
+                <li>A History of Magic by Bathilda Bagshot</li>
+                <li>Magical Theory by Adalbert Waffling</li>
+                <li>A Beginner's Guide to Transfiguration by Emeric Switch</li>
+                <li>One Thousand Magical Herbs and Fungi by Phyllida Spore</li>
+                <li>Magical Drafts and Potions by Arsenius Jigger</li>
+                <li>Fantastic Beasts and Where to Find Them by Newt Scamander</li>
+                <li>The Dark Forces: A Guide to Self-Protection by Quentin Trimble</li>
+              </ul>
+            </div>
+
+            <div class="list-section">
+              <h2>OTHER EQUIPMENT</h2>
+              <ul class="requirements-list">
+                <li>1 Wand</li>
+                <li>1 Cauldron (pewter, standard size 2)</li>
+                <li>1 set of glass or crystal phials</li>
+                <li>1 telescope</li>
+                <li>1 set of brass scales</li>
+              </ul>
+            </div>
+
+            <div class="final-notes">
+              <p>Students may also bring an Owl OR a Cat OR a Toad</p>
+              <p class="warning">PARENTS ARE REMINDED THAT FIRST-YEARS ARE<br>NOT ALLOWED THEIR OWN BROOMSTICKS</p>
+            </div>
+
+            <div class="letter-footer">
+              <p>HOGWARTS SCHOOL of WITCHCRAFT and WIZARDRY</p>
+              <p class="headmaster-line">Headmaster: ALBUS DUMBLEDORE</p>
+              <p class="headmaster-titles">(Order of Merlin, First Class, Grand Sorc., Chf. Warlock,<br>Supreme Mugwump,
+                International Confed. of Wizards)</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="envelope-address">
+      <div class="address-block">
+        <p>Mr. H. Potter,</p>
+        <p>The Cupboard Under the Stairs,</p>
+        <p>4 Privet Drive,</p>
+        <p>Little Whinging,</p>
+        <p>Surrey.</p>
+      </div>
+    </div>
+
+    <svg id="envelope" width="1200" height="800" enable-background="new" version="1.1" viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <pattern id="env-pattern" patternUnits="objectBoundingBox" width="1" height="1">
+          <image xlink:href="assets/envelope.jpg" width="100%" height="100%" preserveAspectRatio="none" />
+        </pattern>
+      </defs>
+      <rect x="2.565" y="36.73" width="94.94" height="60.77" fill="url(#env-pattern)"
+        style="paint-order:stroke markers fill" />
+      <path class="env-flap-open" d="m97.43 36.73h-94.87l47.43-34.8 47.43 34.8" fill="url(#env-pattern)"
+        stroke="#5d4736" stroke-linejoin="round" stroke-width="0.3" style="paint-order:stroke markers fill" />
+      <g fill="url(#env-pattern)" stroke="#5d4736" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3">
+        <path d="m52.31 66.47 45.12 30.99v-60.73l-45.12 29.74" style="paint-order:stroke markers fill" />
+        <g>
+          <path d="m47.69 66.47-45.12 30.99v-60.73l45.12 29.74" style="paint-order:stroke markers fill" />
+          <path d="m97.51 97.5h-95.02l47.51-42.51 47.51 42.51" style="paint-order:stroke markers fill" />
+        </g>
+      </g>
+      <path class="env-flap-closed" d="m97.45 36.73h-94.93l47.47 34.95 47.47-34.95" fill="url(#env-pattern)"
+        stroke="#5d4736" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.3"
+        style="paint-order:stroke markers fill" />
+      <g transform="rotate(15, 50.5, 72.5)">
+        <image class="wax-seal" xlink:href="assets/wax-seal.png" x="43" y="65" width="15" height="15"
+          style="filter: grayscale(20%);" />
+      </g>
+      <image class="crest" xlink:href="assets/hogwarts-crest.png" x="40" y="44" width="20" height="20"
+        style="opacity:0.6" />
+      <a href="#open" style="cursor:pointer">
+        <rect x="43" y="65" width="15" height="15" fill="transparent" />
+      </a>
+    </svg>
   </div>
-<!-- partial -->
-  
+
+  <script src="script.js"></script>
+  <script src="assets/lottie.min.js"></script>
 </body>
+
 </html>
